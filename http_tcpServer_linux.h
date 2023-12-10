@@ -10,6 +10,8 @@
 namespace http
 {
 
+    using namespace std;
+    
     class TcpServer
     {
     public:
@@ -18,19 +20,19 @@ namespace http
         void startListen();
 
     private:
-        std::string m_ip_address;
+        string m_ip_address;
         int m_port;
         int m_socket;
         int m_new_socket;
         long m_incomingMessage;
         struct sockaddr_in m_socketAddress;
         unsigned int m_socketAddress_len;
-        std::string m_serverMessage;
+        string m_serverMessage;
 
         int startServer();
         void closeServer();
         void acceptConnection(int &new_socket);
-        std::string buildResponse();
+        string buildResponse();
         void sendResponse();
     };
 
